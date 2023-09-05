@@ -11,12 +11,16 @@ const CProducts = ({
     features,
     price,
     stock}) => {
+
+
         //! initializing the context using the useContext hook
         const context = useContext(cartContext);
+      
         //!just destructuring the addProduct method from the cartContext which we just assigned to the
         //! context
         const {addProduct} = context;
-         const navigate = useNavigate();
+  
+        const navigate = useNavigate();
   return (
     <>
     <section>
@@ -70,6 +74,8 @@ const CProducts = ({
                 </div>
                 <div>
                 <button className='px-6 py-1 rounded-full bg-slate-300 hover:bg-slate-200 mx-2 sm:my-1 font-semibold ' onClick={()=>addProduct({id , title, price})}>Add to Basket</button>
+                {/* //! MADE A CHANGE I DID NOT DESTRUCTURE THE addProduct from the context */}
+                {/* <button className='px-6 py-1 rounded-full bg-slate-300 hover:bg-slate-200 mx-2 sm:my-1 font-semibold ' onClick={()=>context.addProduct({id , title, price})}>Add to Basket</button> */}
                 </div>
         </aside>
     </div>
