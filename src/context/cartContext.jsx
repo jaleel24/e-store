@@ -11,16 +11,55 @@ const initialState = { cartItems: [] };
 const cartContextProvider = ({children}) => {
 
     const [state, dispatch] = useReducer(cartReducer , initialState);
+    
+//! all the functions or cases defined in reducer we will dispatch it from here so we need functions to dispatch it
+
+//! 1-
     const addProduct = (payload)=>{
         //payload is an object which has id, title and price of the product
         dispatch({type:'ADD', payload})
-        debugger;
+        // debugger;
+        return state.cartItems;
     }
+       
+//! 2-
+    const removeProduct= (payload)=>{
+    dispatch({type:'REMOVE', payload});
+    return state.cartItems;
+ 
+    }
+//! 3-
+const  increaseQuantity= (payload)=>{
+    dispatch({type:'INCQTY', payload});
+    return state.cartItems;
+    }
+//! 4-
+const  decreaseQuantity= (payload)=>{
+    dispatch({type:'DECQTY', payload});
+    return state.cartItems;
+    }
+//! 5-
+const  clearBasket= (payload)=>{
+   
+    dispatch({type:'CLEAR', payload:undefined});
+    return state.cartItems;
+    
+    }
+
+    const getItems = ()=>{
+        return state.cartItems;
+    }
+
 // context values will be available to the whole app since we are providing 
 // to the cartContext a value prop which will be avaialble in all children  which would 
 // be the whole app
     const contextValues = {
         addProduct,
+        removeProduct,
+        increaseQuantity,
+        decreaseQuantity,
+        clearBasket,
+        getItems,
         ...state,
     }
   return (
