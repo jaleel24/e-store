@@ -12,9 +12,9 @@ const cartContextProvider = ({children}) => {
 
     const [state, dispatch] = useReducer(cartReducer , initialState);
     
-//! all the functions or cases defined in reducer we will dispatch it from here so we need functions to dispatch it
+// all the functions or cases defined in reducer we will dispatch it from here so we need functions to dispatch it
 
-//! 1-
+// 1-
     const addProduct = (payload)=>{
         //payload is an object which has id, title and price of the product
         dispatch({type:'ADD', payload})
@@ -22,23 +22,23 @@ const cartContextProvider = ({children}) => {
         return state.cartItems;
     }
        
-//! 2-
+// 2-
     const removeProduct= (payload)=>{
     dispatch({type:'REMOVE', payload});
     return state.cartItems;
  
     }
-//! 3-
+// 3-
 const  increaseQuantity= (payload)=>{
     dispatch({type:'INCQTY', payload});
     return state.cartItems;
     }
-//! 4-
+// 4-
 const  decreaseQuantity= (payload)=>{
     dispatch({type:'DECQTY', payload});
     return state.cartItems;
     }
-//! 5-
+// 5-
 const  clearBasket= (payload)=>{
    
     dispatch({type:'CLEAR', payload:undefined});
