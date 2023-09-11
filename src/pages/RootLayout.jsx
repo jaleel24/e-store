@@ -7,7 +7,7 @@ const RootLayout = () => {
   return (
     <>
       <Header />
-      <div className="flex  ">
+      <div className="flex">
         <div >      
             <Home /> 
         </div>
@@ -15,6 +15,7 @@ const RootLayout = () => {
             <Outlet />
         </div>
       </div>
+   
     </>
   );
 };

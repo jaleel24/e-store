@@ -18,7 +18,7 @@ const cartContextProvider = ({children}) => {
     const addProduct = (payload)=>{
         //payload is an object which has id, title and price of the product
         dispatch({type:'ADD', payload})
-        // debugger;
+        //  debugger;
         return state.cartItems;
     }
        

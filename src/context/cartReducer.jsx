@@ -11,19 +11,23 @@ export const cartReducer = (state, action) => {
     switch (action.type) {
       // For "ADD" and "INCQTY" actions:
       case "ADD":
-        case "INCQTY":
+      case "INCQTY":
           // If the item is not in the cart (index is -1), add it with a quantity of 1.
           if (index === -1) {
             newCartItems.push({ ...action.payload, quantity: 1 });
             // Return a new state object with the updated cartItems immediately after adding.
-            return { ...state, cartItems: newCartItems };
+           console.log("first")
+            // return { ...state, cartItems: newCartItems };
+            
           } else {
             // If the item is already in the cart, increment its quantity by 1.
+            console.log("Second")
             newCartItems[index].quantity++;
+           
             // Return a new state object with the updated cartItems immediately after incrementing.
-            return { ...state, cartItems: newCartItems };
+           
           }
-  
+          return { ...state, cartItems: newCartItems };
       // For "REMOVE" action:
       case "REMOVE":
         // If the item is in the cart (index is greater than -1), remove it.
