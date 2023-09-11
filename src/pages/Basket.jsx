@@ -10,7 +10,7 @@ const Basket = () => {
   useEffect(() => {
     const basketItems = getItems();
     // No need to use setCartItems, as cartItems is already provided by the context.
-    console.log("Basket Items", basketItems);
+    // console.log("Basket Items", basketItems);
   }, [getItems]);
 
   const renderCart = () => {

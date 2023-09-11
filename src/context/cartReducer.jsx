@@ -15,13 +15,12 @@ export const cartReducer = (state, action) => {
           // If the item is not in the cart (index is -1), add it with a quantity of 1.
           if (index === -1) {
             newCartItems.push({ ...action.payload, quantity: 1 });
-            // Return a new state object with the updated cartItems immediately after adding.
-           console.log("first")
+          
             // return { ...state, cartItems: newCartItems };
             
           } else {
             // If the item is already in the cart, increment its quantity by 1.
-            console.log("Second")
+          
             newCartItems[index].quantity++;
            
             // Return a new state object with the updated cartItems immediately after incrementing.
@@ -44,7 +43,10 @@ export const cartReducer = (state, action) => {
       case "DECQTY":
         // If the item is in the cart (index is greater than -1), decrement its quantity by 1.
         if (index > -1) {
-          newCartItems[index].quantity--;
+          if(newCartItems[index].quantity > 1){
+            newCartItems[index].quantity--;
+          }
+         
           // Return a new state object with the updated cartItems.
           return { ...state, cartItems: newCartItems };
         }
