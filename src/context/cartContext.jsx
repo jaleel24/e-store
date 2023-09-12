@@ -3,9 +3,10 @@ import React, { createContext, useReducer } from "react";
 import { cartReducer } from "./cartReducer";
 // 1- create a context
  export const cartContext = createContext();
-
+//! get the item from sessionStorage if it is there then parse it into an object and assign it to Storage otherwise assign an empty array as the initial value
+ const Storage = sessionStorage.getItem('cart') ? JSON.parse(sessionStorage.getItem('cart')):[];
  // create an initial state of , basically initialize the initial state
-const initialState = { cartItems: [] };
+const initialState = { cartItems: Storage };
 
 // Create a provider component and export it as well
 const cartContextProvider = ({children}) => {

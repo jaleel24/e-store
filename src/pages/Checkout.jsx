@@ -1,6 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link ,useNavigate } from "react-router-dom";
 const Checkout = () => {
+  const navigate = useNavigate();
+
+const OderConfirmationHandler = ( )=>{
+  navigate('/orderConfirmation');
+}
   return  <>
       <div className=" mx-12 py-4">
         <div>
@@ -38,20 +43,20 @@ const Checkout = () => {
                     />
                   </div>
                   <div className="mb-4">
-                    <label htmlFor="address" className="block font-medium mb-1">
+                    <label className="block font-medium mb-1">
                       Billing Address
                     </label>
                     <input
-                      type="email"
-                      id="email"
-                      name="email"
+                      type="text"
+                     
+                      name="text"
                       className="w-full p-2 border rounded-md"
                       placeholder="warrington"
                       required
                     />
                   </div>
                   <div className="mb-4">
-                    <label htmlFor="address" className="block font-medium mb-1">
+                    <label className="block font-medium mb-1">
                       Shipping Address
                     </label>
                     <input
@@ -69,10 +74,10 @@ const Checkout = () => {
        
       {/* Checkout Button */}
       <div className="text-center space-x-9">
-        <button className="px-6 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">
+        <button onClick={OderConfirmationHandler} className="px-6 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">
           Place Order
         </button>
-        <button className="px-6 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">
+        <button  onClick={()=>navigate('/basket')} className="px-6 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">
           Cancel
         </button>
       </div>
