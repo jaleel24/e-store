@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import Checkout from "./pages/Checkout";
 import Basket from "./pages/Basket";
 import RootLayout from "./pages/RootLayout";
+import SearchResults from "./pages/SearchResults";
 
 function App(props) {
   const router = createBrowserRouter([
@@ -19,6 +20,7 @@ function App(props) {
         { path: "/home", element: <Home /> },       
         { path: "/basket", element: <Basket /> },
         { path: "/orderConfirmation", element: <OrderConfirmation /> },
+        { path: "/search", element: <SearchResults/> },
         { path: "/Checkout", element: <Checkout /> },
         { path: "/categories/:catId", element: <Category /> },
         { path: "/products/:id", element: <ProductDetails /> },
