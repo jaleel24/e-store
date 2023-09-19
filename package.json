@@ -1,9 +1,10 @@
 {
   "name": "e-store",
-  "private": true,
   "version": "0.0.0",
+  "homepage": "https://jaleel24.github.io//deploy-github-pages",
+  "private": true,
   "type": "module",
-  "homepage": "https://https://jaleel24.github.io//deploy-github-pages",
+  
   "scripts": {
     "dev": "vite",
     "build": "vite build",
